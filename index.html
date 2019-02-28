@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<link rel="stylesheet" href="index.css">
+<script src="vue.js"></script>
+<script src="elementUI.js"></script>
+</head>
+
+<body>
+<div id="app">
+<template>
+    <el-row :gutter="10" style="background-color:#def">
+        <el-col :span="12">
+            <div>
+                500行40列数据，使用ElementUI的勾选功能，能感觉到明显的延迟
+            </div>
+            <el-button @click="toggleSelection3([tableData3[1], tableData3[2]])">切换第二、第三行的选中状态</el-button>
+            <el-table ref="multipleTable3" :data="tableData3" tooltip-effect="dark" style="width: 100%">
+                <el-table-column type="selection" width="50">
+                </el-table-column>
+                <el-table-column prop="col0" label="列1"></el-table-column>
+                <el-table-column prop="col1" label="列2"></el-table-column>
+                <el-table-column prop="col2" label="列3"></el-table-column>
+                <el-table-column prop="col3" label="列4"></el-table-column>
+                <el-table-column prop="col4" label="列5"></el-table-column>
+                <el-table-column prop="col5" label="列6"></el-table-column>
+                <el-table-column prop="col6" label="列7"></el-table-column>
+                <el-table-column prop="col7" label="列8"></el-table-column>
+                <el-table-column prop="col8" label="列9"></el-table-column>
+                <el-table-column prop="col9" label="列10"></el-table-column>
+                <el-table-column prop="col10" label="列11"></el-table-column>
+                <el-table-column prop="col11" label="列12"></el-table-column>
+                <el-table-column prop="col12" label="列13"></el-table-column>
+                <el-table-column prop="col13" label="列14"></el-table-column>
+                <el-table-column prop="col14" label="列15"></el-table-column>
+                <el-table-column prop="col15" label="列16"></el-table-column>
+                <el-table-column prop="col16" label="列17"></el-table-column>
+                <el-table-column prop="col17" label="列18"></el-table-column>
+                <el-table-column prop="col18" label="列19"></el-table-column>
+                <el-table-column prop="col19" label="列20"></el-table-column>
+                <el-table-column prop="col20" label="列21"></el-table-column>
+                <el-table-column prop="col21" label="列22"></el-table-column>
+                <el-table-column prop="col22" label="列23"></el-table-column>
+                <el-table-column prop="col23" label="列24"></el-table-column>
+                <el-table-column prop="col24" label="列25"></el-table-column>
+                <el-table-column prop="col25" label="列26"></el-table-column>
+                <el-table-column prop="col26" label="列27"></el-table-column>
+                <el-table-column prop="col27" label="列28"></el-table-column>
+                <el-table-column prop="col28" label="列29"></el-table-column>
+                <el-table-column prop="col29" label="列30"></el-table-column>
+                <el-table-column prop="col30" label="列31"></el-table-column>
+                <el-table-column prop="col31" label="列32"></el-table-column>
+                <el-table-column prop="col32" label="列33"></el-table-column>
+                <el-table-column prop="col33" label="列34"></el-table-column>
+                <el-table-column prop="col34" label="列35"></el-table-column>
+                <el-table-column prop="col35" label="列36"></el-table-column>
+                <el-table-column prop="col36" label="列37"></el-table-column>
+                <el-table-column prop="col37" label="列38"></el-table-column>
+                <el-table-column prop="col38" label="列39"></el-table-column>
+                <el-table-column prop="col39" label="列40"></el-table-column>
+            </el-table>
+
+        </el-col>
+        <el-col :span="12">
+            <div>
+                500行40列数据，自己管理勾选，性能更好
+            </div>
+            <el-button @click="toggleSelection2([1, 2])">切换第二、第三行的选中状态</el-button>
+            <el-table ref="multipleTable2" :data="tableData2" row-key="id" current-row-key="id" tooltip-effect="dark" style="width: 100%">
+                <el-table-column width="70" :render-header="renderCheckbox">
+                    <template slot-scope="scope">
+                        <input type="checkbox" v-model="scope.row.checked" />
+                    </template>
+                </el-table-column>
+                <el-table-column prop="col0" label="列1"></el-table-column>
+                <el-table-column prop="col1" label="列2"></el-table-column>
+                <el-table-column prop="col2" label="列3"></el-table-column>
+                <el-table-column prop="col3" label="列4"></el-table-column>
+                <el-table-column prop="col4" label="列5"></el-table-column>
+                <el-table-column prop="col5" label="列6"></el-table-column>
+                <el-table-column prop="col6" label="列7"></el-table-column>
+                <el-table-column prop="col7" label="列8"></el-table-column>
+                <el-table-column prop="col8" label="列9"></el-table-column>
+                <el-table-column prop="col9" label="列10"></el-table-column>
+                <el-table-column prop="col10" label="列11"></el-table-column>
+                <el-table-column prop="col11" label="列12"></el-table-column>
+                <el-table-column prop="col12" label="列13"></el-table-column>
+                <el-table-column prop="col13" label="列14"></el-table-column>
+                <el-table-column prop="col14" label="列15"></el-table-column>
+                <el-table-column prop="col15" label="列16"></el-table-column>
+                <el-table-column prop="col16" label="列17"></el-table-column>
+                <el-table-column prop="col17" label="列18"></el-table-column>
+                <el-table-column prop="col18" label="列19"></el-table-column>
+                <el-table-column prop="col19" label="列20"></el-table-column>
+                <el-table-column prop="col20" label="列21"></el-table-column>
+                <el-table-column prop="col21" label="列22"></el-table-column>
+                <el-table-column prop="col22" label="列23"></el-table-column>
+                <el-table-column prop="col23" label="列24"></el-table-column>
+                <el-table-column prop="col24" label="列25"></el-table-column>
+                <el-table-column prop="col25" label="列26"></el-table-column>
+                <el-table-column prop="col26" label="列27"></el-table-column>
+                <el-table-column prop="col27" label="列28"></el-table-column>
+                <el-table-column prop="col28" label="列29"></el-table-column>
+                <el-table-column prop="col29" label="列30"></el-table-column>
+                <el-table-column prop="col30" label="列31"></el-table-column>
+                <el-table-column prop="col31" label="列32"></el-table-column>
+                <el-table-column prop="col32" label="列33"></el-table-column>
+                <el-table-column prop="col33" label="列34"></el-table-column>
+                <el-table-column prop="col34" label="列35"></el-table-column>
+                <el-table-column prop="col35" label="列36"></el-table-column>
+                <el-table-column prop="col36" label="列37"></el-table-column>
+                <el-table-column prop="col37" label="列38"></el-table-column>
+                <el-table-column prop="col38" label="列39"></el-table-column>
+                <el-table-column prop="col39" label="列40"></el-table-column>
+            </el-table>
+        </el-col>
+    </el-row>
+
+</template>
+</div>
+<script src="index.js"></script>
+</body>
+
+</html>
